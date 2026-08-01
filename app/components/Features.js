@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from '../styles/Features.module.css'
 import { AiFillFileText, AiFillBulb, AiFillAudio } from 'react-icons/ai'
 
