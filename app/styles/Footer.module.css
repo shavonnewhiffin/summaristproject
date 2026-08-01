@@ -15,6 +15,7 @@
 
 .footer__block {
   z-index: 1;
+  width: 200px;
 }
 
 .footer__link--title {
@@ -88,7 +89,9 @@
 @media (max-width: 768px){
 
   .footer__top--wrapper {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 32px;
   }
 }
