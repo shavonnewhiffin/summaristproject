@@ -10,6 +10,7 @@
   font-weight: 500;
   color: #6b757b;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .statistics__heading:last-child {
@@ -35,6 +36,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .statistics__content--header-second {
@@ -83,10 +85,12 @@
 
     .statistics__content--details-second {
     order: 1;
+    display: none;
   }
 
   .statistics__content--header-second {
     align-items: flex-start;
+    display: none;
   }
 
   .statistics__data--title {
