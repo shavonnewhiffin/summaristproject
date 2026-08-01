@@ -1,4 +1,3 @@
- import React from 'react'
  import styles from '../styles/Reviews.module.css'
 import { BsFillStarFill } from "react-icons/bs";
  
