@@ -13,7 +13,7 @@ import { BsFillStarFill } from "react-icons/bs";
               <div className={styles.review__header}>
                 <div className={styles.review__name}>Hanna M.</div>
                 <div className={styles.review__stars}>
-                  {Array.from({ length: 5 }, (__, i) => (<BsFillStarFill />))}
+                  {Array.from({ length: 5 }, (__, i) => (<BsFillStarFill key={i} />))}
                 </div>
               </div>
               <div className={styles.review__body}>
@@ -26,7 +26,7 @@ import { BsFillStarFill } from "react-icons/bs";
               <div className={styles.review__header}>
                 <div className={styles.review__name}>David B.</div>
                 <div className={styles.review__stars}>
-                  {Array.from({ length: 5 }, (__, i) => (<BsFillStarFill />))}
+                  {Array.from({ length: 5 }, (__, i) => (<BsFillStarFill key={i} />))}
                 </div>
               </div>
               <div className={styles.review__body}>
@@ -39,7 +39,7 @@ import { BsFillStarFill } from "react-icons/bs";
               <div className={styles.review__header}>
                 <div className={styles.review__name}>Nathan S.</div>
                 <div className={styles.review__stars}>
-                  {Array.from({ length: 5 }, (__, i) => (<BsFillStarFill />))}
+                  {Array.from({ length: 5 }, (__, i) => (<BsFillStarFill key={i} />))}
                 </div>
               </div>
               <div className={styles.review__body}>
@@ -53,7 +53,7 @@ import { BsFillStarFill } from "react-icons/bs";
               <div className={styles.review__header}>
                 <div className={styles.review__name}>Ryan R.</div>
                 <div className={styles.review__stars}>
-                  {Array.from({ length: 5 }, (__, i) => (<BsFillStarFill />))}
+                  {Array.from({ length: 5 }, (__, i) => (<BsFillStarFill key={i} />))}
                 </div>
               </div>
               <div className={styles.review__body}>
