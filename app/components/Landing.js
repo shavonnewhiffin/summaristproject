@@ -1,4 +1,3 @@
-import React from "react"
 import styles from "../styles/Landing.module.css"
 import Image from "next/image"
 import landingImg from "../assets/landing.png"
