@@ -51,6 +51,14 @@ button:disabled {
   width: 100%;
 }
 
+.section__title {
+  font-size: 32px;
+  color: #032b41;
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: bold;
+}
+
 .btn {
   background-color: #2bd97c;
   color: #032b41;
