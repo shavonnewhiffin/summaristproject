@@ -88,3 +88,9 @@ button:disabled {
 .btn:active {
   transform: translateY(1px);
 }
+
+@media (max-width: 768px) {
+  .container--first{
+    padding-top: 40px;
+  }
+}
