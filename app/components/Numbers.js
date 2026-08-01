@@ -5,20 +5,20 @@ import { RiLeafLine } from "react-icons/ri";
 
 export default function Numbers() {
   return (
-  <section id="numbers">
+  <section className={styles.numbers}>
       <div className="container">
         <div className="row">
           <div className="section__title">Start growing with Summarist now</div>
           <div className={styles.numbers__wrapper}>
-            <div className={styles.numbers}>
+            <div className={styles.numbers__container}>
               <div className={styles.numbers__icon}>
                 <BiCrown />
               </div>
               <div className={styles.numbers__title}>3 Million</div>
               <div className={styles['numbers__sub--title']}>Downloads on all platforms</div>
             </div>
-            <div className={styles.numbers}>
-              <div className={styles.numbers__icon}>
+            <div className={styles.numbers__container}>
+              <div className={`${styles.numbers__icon} ${styles['numbers__star--icon']}`}>
                 {Array.from({ length: 4 }).map((_, i) => <BsFillStarFill key={i} />)}
                 <BsStarHalf />
               </div>
@@ -27,7 +27,7 @@ export default function Numbers() {
                 Average ratings on iOS and Google Play
               </div>
             </div>
-            <div className={styles.numbers}>
+            <div className={styles.numbers__container }>
               <div className={styles.numbers__icon}>
                 <RiLeafLine />
               </div>

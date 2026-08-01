@@ -3,7 +3,7 @@ import { AiFillFileText, AiFillBulb, AiFillAudio } from 'react-icons/ai'
 
 export default function Features() {
   return (
-    <section id="features">
+    <section className={styles.features}>
               <div className="container">
         <div className="row">
           <div className="section__title">Understand books in few minutes</div>

@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function Navbar() {
     return (
     <nav className={styles.nav}>
-      <div className={styles.nav__wrapper}>
+      <div className={`row ${styles.nav__wrapper}`}>
         <figure className={styles['nav__img--mask']}>
           <img className={styles.nav__img} src="/images/logo.png" alt="logo" />
         </figure>

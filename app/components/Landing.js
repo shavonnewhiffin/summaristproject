@@ -1,12 +1,12 @@
 import styles from "../styles/Landing.module.css"
 import Image from "next/image"
-import landingImg from "../assets/landing.png"
+import landingImg from "../assets/landingsmall.png"
 
 export default function Landing() {
     console.log(styles)
     return (
-       <section id={styles.landing}>
-      <div className="container">
+       <section className={styles.landing}>
+      <div className="container container--first">
         <div className="row">
           <div className={styles.landing__wrapper}>
             <div className={styles.landing__content}>
@@ -24,7 +24,7 @@ export default function Landing() {
               <button className={`${styles.btn} ${styles['home__cta--btn']}`}>Login</button>
             </div>
             <figure className={styles['landing__image--mask']}>
-              <Image src={landingImg} alt="landing" />
+              <Image src={landingImg} alt="landing" width="779" height="740" loading="lazy" />
             </figure>
           </div>
         </div>

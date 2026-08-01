@@ -51,6 +51,14 @@ button:disabled {
   width: 100%;
 }
 
+.container--first {
+  padding-top: 0;
+}
+
+.container--last{
+  margin: 0 auto;
+}
+
 .section__title {
   font-size: 32px;
   color: #032b41;

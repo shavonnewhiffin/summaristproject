@@ -2,7 +2,7 @@ import styles from "../styles/Statistics.module.css"
 
 export default function Statistics() {
   return (
-    <section id="statistics">
+    <section className={styles.statistics}>
      <div className="container">
     <div className="row">
       <div className={styles.statistics__wrapper}>

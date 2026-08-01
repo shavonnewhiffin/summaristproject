@@ -1,6 +1,15 @@
 /* LANDING */
+
+.landing {
+  max-width: 1070px;
+  margin: 0 auto;
+}
+
 .landing__wrapper {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .landing__content {
@@ -11,12 +20,13 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin-left: 80px;
 }
 
 .landing__image--mask img {
   width: 100%;
   height: auto;
-  max-width: 400px;
+  max-width: 539px;
 }
 
 .landing__content__title {

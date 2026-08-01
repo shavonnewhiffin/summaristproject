@@ -1,5 +1,10 @@
 /* STATISTICS */
 
+.statistics {
+  max-width: 1070px;
+  margin: 0 auto;
+}
+
 .statistics__heading {
   font-size: 32px;
   font-weight: 500;

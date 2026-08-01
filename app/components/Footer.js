@@ -3,7 +3,7 @@ import styles from '../styles/Footer.module.css'
 export default function Footer() {
   return (
      <section className={styles.footer}>
-      <div className="container">
+      <div className="container container--last">
         <div className="row">
           <div className={styles['footer__top--wrapper']}>
             <div className={styles['footer__block']}>
