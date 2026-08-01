@@ -3,7 +3,7 @@ import styles from "../styles/Statistics.module.css"
 export default function Statistics() {
   return (
     <section className={styles.statistics}>
-     <div className="container">
+     <div className="container container--statistics">
     <div className="row">
       <div className={styles.statistics__wrapper}>
         <div className={styles['statistics__content--header']}>
