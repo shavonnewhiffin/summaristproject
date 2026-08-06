@@ -1,8 +1,11 @@
 import React from 'react'
+import Sidebar from './Sidebar'
 
 const ForYou = () => {
   return (
-    <div>page</div>
+    <div>
+      <Sidebar />
+      page</div>
   )
 }
 
