@@ -5,8 +5,11 @@ import styles from '../../styles/Sidebar.module.css'
 import Image from 'next/image'
 import { IoHomeOutline } from "react-icons/io5";
 import { IoBookmarkOutline } from "react-icons/io5";
-import { TiPen } from "react-icons/ti";
+import { LiaPenAltSolid } from "react-icons/lia";
 import { IoIosSearch } from "react-icons/io"; 
+import { IoSettingsOutline } from "react-icons/io5";
+import { HiOutlineQuestionMarkCircle } from "react-icons/hi2";
+import { MdLogout } from "react-icons/md";
 
 const Sidebar = () => {
 
@@ -42,20 +45,16 @@ const Sidebar = () => {
               <div className={styles['sidebar__link--text']}>My Library</div>
             </div>
 
-            <div className={styles['sidebar__link--wrapper']} onClick={() => {
-              handleTabClick('Highlights');
-            }}>
-              <div className={`${styles['sidebar__link--line']} ${activeTab === 'Highlights' ? styles['active--tab'] : '' }`}></div>
+            <div className={`${styles['sidebar__link--wrapper']} ${styles['sidebar__link--not-allowed']}`}>
+              <div className={styles['sidebar__link--line']}></div>
               <div className={styles['sidebar__icon--wrapper']}>
-                <TiPen />
+                <LiaPenAltSolid />
               </div>
               <div className={styles['sidebar__link--text']}>Highlights</div>
-            </div>  
+            </div>
 
-            <div className={styles['sidebar__link--wrapper']} onClick={() => {
-              handleTabClick('Search');
-            }}>
-              <div className={`${styles['sidebar__link--line']} ${activeTab === 'Search' ? styles['active--tab'] : '' }`}></div>
+            <div className={`${styles['sidebar__link--wrapper']} ${styles['sidebar__link--not-allowed']}`}>
+              <div className={styles['sidebar__link--line']}></div>
               <div className={styles['sidebar__icon--wrapper']}>
                 <IoIosSearch />
               </div>
@@ -63,6 +62,31 @@ const Sidebar = () => {
             </div>
           </div>
           <div className={styles.sidebar__bottom}>
+
+            <div className={styles['sidebar__link--wrapper']} onClick={() => {
+              handleTabClick('Settings');
+            }}>
+              <div className={`${styles['sidebar__link--line']} ${activeTab === 'Settings' ? styles['active--tab'] : '' }`}></div>
+              <div className={styles['sidebar__icon--wrapper']}>
+               <IoSettingsOutline />
+              </div>
+              <div className={styles['sidebar__link--text']}>Settings</div>
+            </div>
+            <div className={`${styles['sidebar__link--wrapper']} ${styles['sidebar__link--not-allowed']}`}>
+              <div className={styles['sidebar__link--line']}></div>
+              <div className={styles['sidebar__icon--wrapper']}>
+               <HiOutlineQuestionMarkCircle />
+              </div>
+              <div className={styles['sidebar__link--text']}>Help & Support</div>
+            </div>
+            <div className={`${styles['sidebar__link--wrapper']} ${styles['sidebar__link--not-allowed']}`}>
+              <div className={styles['sidebar__link--line']}></div>
+              <div className={styles['sidebar__icon--wrapper']}>
+               <MdLogout />
+              </div>
+              <div className={styles['sidebar__link--text']}>Logout</div>
+            </div>
+
 
           </div>
         </div>
