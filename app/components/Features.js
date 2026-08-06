@@ -1,4 +1,4 @@
-import styles from '../styles/Features.module.css'
+import styles from '../styles/home/Features.module.css'
 import { AiFillFileText, AiFillBulb, AiFillAudio } from 'react-icons/ai'
 
 export default function Features() {

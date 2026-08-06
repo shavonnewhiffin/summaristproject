@@ -1,4 +1,4 @@
-import styles from "../styles/Statistics.module.css"
+import styles from "../styles/home/Statistics.module.css"
 
 export default function Statistics() {
   return (

@@ -1,4 +1,4 @@
-import ForYou from '../components/for-you/ForYou'
+import ForYou from '../components/foryou/ForYou'
 
 export default function Page() {
   return <ForYou />;

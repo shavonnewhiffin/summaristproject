@@ -1,4 +1,4 @@
- import styles from '../styles/Reviews.module.css'
+import styles from '../styles/home/Reviews.module.css'
 import { BsFillStarFill } from "react-icons/bs";
  
  export default function Reviews() {

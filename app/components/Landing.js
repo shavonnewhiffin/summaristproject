@@ -1,4 +1,4 @@
-import styles from "../styles/Landing.module.css"
+import styles from "../styles/home/Landing.module.css"
 import Image from "next/image"
 import landingImg from "../assets/landingsmall.png"
 

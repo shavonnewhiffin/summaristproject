@@ -1,4 +1,4 @@
-import styles from '../styles/Numbers.module.css'
+import styles from '../styles/home/Numbers.module.css'
 import { BsFillStarFill, BsStarHalf } from "react-icons/bs";
 import { BiCrown } from "react-icons/bi";
 import { RiLeafLine } from "react-icons/ri";

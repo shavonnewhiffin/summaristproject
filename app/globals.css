@@ -89,6 +89,12 @@ button:disabled {
   transform: translateY(1px);
 }
 
+.icons {
+  width: 24px;
+  height: 24px;
+  color: #03314b;
+}
+
 @media (max-width: 768px) {
   .container--first{
     padding-top: 40px;
