@@ -95,6 +95,21 @@ button:disabled {
   color: #03314b;
 }
 
+/* IN PORTAL */
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #032b41;
+    margin-bottom: 16px;
+}
+
+.sub-title {
+    font-weight: 300;
+    color: #394547;
+    margin-bottom: 16px;
+}
+
 /* SKELETON LOADING STATES */
 
 .skeleton {
