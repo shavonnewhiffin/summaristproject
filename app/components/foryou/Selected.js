@@ -19,7 +19,7 @@ console.log(selected)
                 <div className={styles['selected__book--line']}></div>
                 <div className={styles['selected__book--content']}>
                   <figure className={styles['book__image--wrapper']}>
-                    <Image className={styles.book__image} src={selected[0].imageLink} alt={selected[0].title} fill loading="lazy" />
+                    <Image className={styles.book__image} src={selected[0].imageLink} alt={selected[0].title} loading="lazy" />
                   </figure>
                 </div>
                 <div className={styles['selected__book--text']}>
