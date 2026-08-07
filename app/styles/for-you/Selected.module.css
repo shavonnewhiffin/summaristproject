@@ -1,12 +1,5 @@
 /* SELECTED */
 
-.foryou__title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #032b41;
-    margin-bottom: 16px;
-}
-
 .selected__book {
     display: flex;
     justify-content: space-between;
