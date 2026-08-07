@@ -8,3 +8,16 @@
     width: calc(100% - 200px);
     transition: all .3s;
 }
+
+.foryou__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #032b41;
+    margin-bottom: 16px;
+}
+
+.foryou__sub-title {
+    font-weight: 300;
+    color: #394547;
+    margin-bottom: 16px;
+}
