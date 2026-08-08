@@ -3,6 +3,7 @@ import Sidebar from './Sidebar'
 import Search from './Search'
 import Selected from './Selected'
 import Recommended from './Recommended'
+import Suggested from './Suggested'
 import styles from '../../styles/for-you/ForYou.module.css'
 
 const ForYou = () => {
@@ -15,6 +16,7 @@ const ForYou = () => {
           <div className="container">
             <Selected />
             <Recommended />
+            <Suggested />
           </div>
         </div>
       </div>
