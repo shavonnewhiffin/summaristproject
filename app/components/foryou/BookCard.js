@@ -8,7 +8,7 @@ import { IoMdStarOutline } from "react-icons/io";
   console.log(book)
   return (
     <div className={styles.book}>
-      <div className={styles['book__pill']}>New</div>
+      <div className={styles['book__pill']} style={{ display: book.subscriptionRequired ? 'block' : 'none' }}>Premium</div>
       <figure className={styles['book__image--wrapper']}>
         <Image className={styles['book__image']} src={`${book.imageLink}`} fill loading="lazy" alt="Book Cover" />
       </figure>
