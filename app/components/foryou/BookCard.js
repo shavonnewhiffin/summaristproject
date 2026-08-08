@@ -1,32 +1,36 @@
 import React from 'react'
 import Image from 'next/image'
+import styles from '../../styles/for-you/BookCard.module.css'
 import { CiClock2 } from "react-icons/ci";
 import { IoMdStarOutline } from "react-icons/io";
 
-
-export const BookCard = () => {
+ export default function BookCard({ book }){
+  console.log(book)
   return (
-    <div className="book">
-      <figure className="book__image--wrapper">
-        <Image className="book__image" src="/path/to/book-image.jpg" alt="Book Cover" />
+    <div className={styles.book}>
+      <div className={styles['book__pill']}>New</div>
+      <figure className={styles['book__image--wrapper']}>
+        <Image className={styles['book__image']} src={`${book.imageLink}`} fill loading="lazy" alt="Book Cover" />
       </figure>
-      <div className="book__title">Cant Hurt Me</div>
-      <div className="book__author">David Goggins</div>
-      <div className="book__sub-title">Master Your Mind and Defy the Odds</div>
-      <div className="book__details--wrapper">
-        <div className="book__details">
-          <div className="book__details--icon">
+      <div className={styles['book__title']}>{book.title}</div>
+      <div className={styles['book__author']}>{book.author}</div>
+      <div className={styles['book__sub-title']}>{book.subTitle}</div>
+      <div className={styles['book__details--wrapper']}>
+        <div className={styles['book__details']}>
+          <div className={styles['book__details--icon']}>
             <CiClock2 />
           </div>
-          <div className="book__details--text">03:24</div>
+          <div className={styles['book__details--text']}>03:24</div>
         </div>
-        <div className="book__details">
-          <div className="book__details--icon">
+        <div className={styles['book__details']}>
+          <div className={styles['book__details--icon']}>
             <IoMdStarOutline />
           </div>
-          <div className="book__details--text">4.5</div>
+          <div className={styles['book__details--text']}>4.5</div>
         </div>
       </div>
     </div>
   )
 }
+
+
