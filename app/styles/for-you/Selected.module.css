@@ -24,7 +24,6 @@
 .selected__book--content {
     display: flex;
     gap: 16px;
-    width: 60%;
 }
 
 .book__image--wrapper {
@@ -39,7 +38,7 @@
 }
 
 .selected__book--text {
-    width: 100%;
+    width: 70%;
 }
 
 .selected__book--title {
