@@ -11,15 +11,15 @@ console.log(selected)
 
   return (
         <div className="for-you__wrapper">
-              <h2 className={styles.foryou__title}>Selected just for you</h2>
+              <h2 className="title">Selected just for you</h2>
               <div className={styles.selected__book}>
-                <div className={styles['selected__book--sub-title']}>
+                <div className={styles['selected__book-sub-title']}>
                   {selected[0].subTitle}
                 </div>
                 <div className={styles['selected__book--line']}></div>
                 <div className={styles['selected__book--content']}>
                   <figure className={styles['book__image--wrapper']}>
-                    <Image className={styles.book__image} src={selected[0].imageLink} alt={selected[0].title} loading="lazy" />
+                    <Image className={styles.book__image} src={selected[0].imageLink} alt={selected[0].title} fill loading="lazy" />
                   </figure>
                 </div>
                 <div className={styles['selected__book--text']}>
