@@ -26,7 +26,7 @@ import { IoMdStarOutline } from "react-icons/io";
           <div className={styles['book__details--icon']}>
             <IoMdStarOutline />
           </div>
-          <div className={styles['book__details--text']}>4.5</div>
+          <div className={styles['book__details--text']}>{book.averageRating}</div>
         </div>
       </div>
     </div>
