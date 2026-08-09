@@ -1,6 +1,19 @@
+import React, { useEffect, useState } from "react"
 import styles from "../styles/home/Statistics.module.css"
 
 export default function Statistics() {
+
+  const [active, setActive] = useState(0);
+  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'];
+
+  useEffect(() => {
+    setActiveIndex(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 2000);
+
+    return () => clearInterval(interval)
+  })
+
   return (
     <section className={styles.statistics}>
      <div className="container container--statistics">
