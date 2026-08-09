@@ -77,23 +77,13 @@
   animation: rotate 1s infinite;
 }
 
-.highlight {
-  font-weight: bold;
-  color: greenyellow;
-}
 
 @keyframes rotate {
   0%{
-    transform: rotate(0deg);
-    color: green;
-  }
-  50% {
-    transform: rotate(15deg);
-    color: darkgreen;
+    color: #2bd97c;
   }
   100% {
-    transform: rotate(0deg);
-    color: green;
+    color: #2bd97c;
   }
 }
 
