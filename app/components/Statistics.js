@@ -1,18 +1,23 @@
+"use client"
+
 import React, { useEffect, useState } from "react"
 import styles from "../styles/home/Statistics.module.css"
 
 export default function Statistics() {
 
+  const headingsFirst = ['Enhance your knowledge', 'Achieve greater success', 'Improve your health', ' Develop better parenting skills', 'Increase happiness', 'Be the best version of yourself!'];
+
+  const headingsSecond = ['Expand your learning', 'Accomplish your goals', 'Strengthen your vitality', 'Become a better caregiver', 'Improve your mood', 'Maximize your abilities'];
+
   const [active, setActive] = useState(0);
-  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'];
 
   useEffect(() => {
-    setActiveIndex(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    const interval = setInterval(() => {
+      setActive((prevIndex) => (prevIndex + 1) % headingsFirst.length);
     }, 2000);
 
     return () => clearInterval(interval)
-  })
+  }, [])
 
   return (
     <section className={styles.statistics}>
@@ -20,16 +25,18 @@ export default function Statistics() {
     <div className="row">
       <div className={styles.statistics__wrapper}>
         <div className={styles['statistics__content--header']}>
-          <div className={styles.statistics__heading}>Enhance your knowledge</div>
-          <div className={styles.statistics__heading}>Achieve greater success</div>
-          <div className={styles.statistics__heading}>Improve your health</div>
-          <div className={styles.statistics__heading}>
-            Develop better parenting skills
-          </div>
-          <div className={styles.statistics__heading}>Increase happiness</div>
-          <div className={styles.statistics__heading}>
-            Be the best version of yourself!
-          </div>
+          {headingsFirst.map((heading, index) => (
+            <div
+              key={index}
+              className={`${styles.statistics__heading} ${
+                index === active
+                  ? `${styles['statistics__heading--active']} ${styles['rotating-heading']}`
+                  : ''
+              }`}
+            >
+              {heading}
+            </div>
+          ))}
         </div>
         <div className={styles['statistics__content--details']}>
           <div className={styles.statistics__data}>
@@ -82,12 +89,18 @@ export default function Statistics() {
         <div
           className={`${styles['statistics__content--header']} ${styles['statistics__content--header-second']}`}
         >
-          <div className={styles.statistics__heading}>Expand your learning</div>
-          <div className={styles.statistics__heading}>Accomplish your goals</div>
-          <div className={styles.statistics__heading}>Strengthen your vitality</div>
-          <div className={styles.statistics__heading}>Become a better caregiver</div>
-          <div className={styles.statistics__heading}>Improve your mood</div>
-          <div className={styles.statistics__heading}>Maximize your abilities</div>
+               {headingsSecond.map((heading, index) => (
+            <div
+              key={index}
+              className={`${styles.statistics__heading} ${
+                index === active
+                  ? `${styles['statistics__heading--active']} ${styles['rotating-heading']}`
+                  : ''
+              }`}
+            >
+              {heading}
+            </div>
+          ))}
         </div>
       </div>
       </div>
