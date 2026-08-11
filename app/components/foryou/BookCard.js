@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../../styles/for-you/BookCard.module.css'
 import { CiClock2 } from "react-icons/ci";
@@ -7,7 +8,7 @@ import { IoMdStarOutline } from "react-icons/io";
  export default function BookCard({ book }){
   console.log(book)
   return (
-    <div className={styles.book}>
+    <Link href={`/book/${book.id}`} className={styles.book}>
       <div className={styles['book__pill']} style={{ display: book.subscriptionRequired ? 'block' : 'none' }}>Premium</div>
       <figure className={styles['book__image--wrapper']}>
         <Image className={styles['book__image']} src={`${book.imageLink}`} fill loading="lazy" alt="Book Cover" />
@@ -29,7 +30,7 @@ import { IoMdStarOutline } from "react-icons/io";
           <div className={styles['book__details--text']}>{book.averageRating}</div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
