@@ -43,7 +43,7 @@ const [selectedPlan, setSelectedPlan] = useState('yearly')
             </div>
             <div className={`${styles['plan__card']} ${selectedPlan === 'yearly'? styles['plan__card--active'] : ''}`} onClick={() => {setSelectedPlan('yearly')}}>
                 <div className={styles['plan__card--circle']}>
-                    <div className={styles['plan__card--dot']}></div>
+                    <div className = {selectedPlan === 'yearly'? styles['plan__card--dot'] : ''}></div>
                 </div>
                 <div className={styles['plan__card--content']}>
                     <div className={styles['plan__card--title']}>Premium Plus Yearly</div>
@@ -57,7 +57,7 @@ const [selectedPlan, setSelectedPlan] = useState('yearly')
         </div>
               <div className={`${styles['plan__card']} ${selectedPlan === 'monthly' ? styles['plan__card--active'] : '' }`} onClick={() =>(setSelectedPlan('monthly'))}>
                 <div className={styles['plan__card--circle']}>
-                    <div className={styles['plan__card--dot']}></div>
+                    <div className={selectedPlan === 'monthly' ? styles['plan__card--dot'] : ''}></div>
                 </div>
                 <div className={styles['plan__card--content']}>
                     <div className={styles['plan__card--title']}>Premium Monthly</div>
