@@ -1,7 +1,15 @@
+"use client"
+import { useState } from 'react'
 import styles from '../styles/home/Reviews.module.css'
+import RegisterModal from './RegisterModal';
+import LoginModal from './LoginModal';
 import { BsFillStarFill } from "react-icons/bs";
  
  export default function Reviews() {
+
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [registerModalOpen, setRegisterModalOpen] = useState(false);
+
    return (
      <section id="reviews">
       <div className="row">
@@ -64,7 +72,23 @@ import { BsFillStarFill } from "react-icons/bs";
             </div>
           </div>
           <div className={styles['reviews__btn--wrapper']}>
-            <button className={`${styles.btn} ${styles['home__cta--btn']}`}>Login</button>
+            <button className={`${styles.btn} ${styles['home__cta--btn']}`} onClick={() => setLoginModalOpen(true)}>Login</button>
+            {loginModalOpen && (<LoginModal
+            onClose={() => setLoginModalOpen(false)}
+            onRegister={() => {
+              setLoginModalOpen(false);
+              setRegisterModalOpen(true);
+            }}
+            /> )}
+            {registerModalOpen && (
+                <RegisterModal
+                  onClose={() => setRegisterModalOpen(false)}
+                  onLogin={() => {
+                    setRegisterModalOpen(false);
+                    setLoginModalOpen(true);
+                  }}
+                  />
+                )}
           </div>
         </div>
       </div>
