@@ -121,8 +121,9 @@
     font-size: 14px;
     width: -moz-fit-content;
     width: fit-content;
-    margin: 0 auto 16px;
+    margin: 0 auto;
     cursor: pointer;
+    padding-top: 16px;
 }
 
 .modal__switch--btn {
@@ -134,6 +135,7 @@
     border-radius: 0 0 4px 4px;
     font-weight: 300;
     font-size: 16px;
+    padding-top: 8px;
 }
 
 .modal__close--btn {
@@ -153,4 +155,11 @@
 .auth__error {
     color: #f56c6c;
     margin-bottom: 16px;
+    text-align: center;
+}
+
+input:focus {
+  border: 2px solid #2bd97c;
+  color: #f0f8ff;
+  outline: none; /* Removes the default browser outline */
 }
