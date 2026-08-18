@@ -1,14 +1,15 @@
 "use client";
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { auth } from '../src/firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, provider } from '../src/firebase';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { IoMdClose } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { FaSpinner } from "react-icons/fa";
 import styles from '../styles/home/Modals.module.css'
 import Image from 'next/image'
 import google from '../.././public/images/google.png'
+
 
 export default function LoginModal({ onClose, onRegister }) {
 
@@ -42,6 +43,20 @@ export default function LoginModal({ onClose, onRegister }) {
         login();
     }
 
+    function googleLogin() {
+        signInWithPopup(auth, provider)
+        .then((user) => {
+             setUser(user)
+            onClose();
+            router.push('/for-you');
+        })
+        .catch((error) => {
+            console.log(error);
+            setAuthError(error.message);
+            setLoading(false);
+        })
+    }
+
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
@@ -61,7 +76,7 @@ export default function LoginModal({ onClose, onRegister }) {
             <figure className={styles['google__icon--mask']}>
               <Image src={google} alt="" />
             </figure>
-            <div className="">Login with Google</div>
+            <div className="" onClick={() => {googleLogin}}>Login with Google</div>
           </button>
           <div className={styles['modal__seperator']}>
             <span className={styles['modal__seperator--text']}>or</span>
