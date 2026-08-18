@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ReduxProvider from "./ReduxProvider";
 import { AudioPlayerProvider } from "./src/context/audio-player-context";
+import { AuthProvider } from "./src/context/auth-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,11 +25,9 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-         <ReduxProvider>
-           <AudioPlayerProvider>
-        {children}
-          </AudioPlayerProvider>
-        </ReduxProvider>
+        <AuthProvider>
+          <AudioPlayerProvider>{children}</AudioPlayerProvider>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -1,9 +1,15 @@
+"use client"
+import { useState } from "react"
+import LoginModal from "./LoginModal"
+import RegisterModal from "./RegisterModal"
 import styles from "../styles/home/Landing.module.css"
 import Image from "next/image"
 import landingImg from "../assets/landingsmall.png"
 
 export default function Landing() {
-    console.log(styles)
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const [isRegisterOpen, setisRegisterOpen] = useState(false);
+
     return (
        <section className={styles.landing}>
       <div className="container container--first">
@@ -21,7 +27,25 @@ export default function Landing() {
                 <br className={styles['remove--tablet']} />
                 and even people who don’t like to read.
               </div>
-              <button className={`${styles.btn} ${styles['home__cta--btn']}`}>Login</button>
+              <button className={`${styles.btn} ${styles['home__cta--btn']}`} onClick={() => setIsLoginOpen(true)}>Login</button>
+              {isLoginOpen && (
+               <LoginModal
+  onClose={() => setIsLoginOpen(false)}
+  onRegister={() => {
+    setIsLoginOpen(false);
+    setisRegisterOpen(true);
+  }}
+/>
+              )}
+              {isRegisterOpen && (
+                <RegisterModal
+                  onClose={() => setisRegisterOpen(false)}
+                  onLogin={() => {
+                    setisRegisterOpen(false);
+                    setIsLoginOpen(true);
+                  }}
+                />
+              )}
             </div>
             <figure className={styles['landing__image--mask']}>
               <Image src={landingImg} alt="landing" width="779" height="740" loading="lazy" />
