@@ -47,7 +47,7 @@ export default function LoginModal({ onClose, onRegister }) {
       <div className={styles.modal}>
         <div className={styles['modal__content']}>
           <div className={styles['modal__title']}>Login to Summarist</div>
-          {authError && <div className="auth__error">{authError}</div>}
+          {authError && <div className={styles['auth__error']}>{authError}</div>}
           <button className={`btn ${styles.btn} ${styles['guest__btn--wrapper']}`}>
             <figure className={`${styles['google__icon--mask']} ${styles['guest__icon--mask']}`}>
               <FaUser />
