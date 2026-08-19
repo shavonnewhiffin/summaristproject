@@ -23,9 +23,9 @@ const RegisterModal = ({ onClose, onLogin }) => {
        function register() {
         setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
-        .then((user) => {
-            console.log(user);
-            setUser(user)
+        .then((result) => {
+            console.log(result.user);
+            setUser(result.user)
             onClose();
             router.push('/for-you');
          
@@ -46,8 +46,8 @@ const RegisterModal = ({ onClose, onLogin }) => {
         setGoogleLoading(true);
         signInWithPopup(auth, provider)
         .then((user) => {
-            console.log(user);
-            setUser(user);
+            console.log(result.user);
+            setUser(result.user);
             setGoogleLoading(false);
             router.push('/for-you');
         })

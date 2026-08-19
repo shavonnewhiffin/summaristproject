@@ -26,9 +26,9 @@ export default function LoginModal({ onClose, onRegister }) {
         setLoading(true);
         setAuthError(null);
         signInWithEmailAndPassword(auth, email, password)
-        .then((user) => {
-            console.log(user)
-            setUser(user)
+        .then((result) => {
+            console.log(result.user)
+            setUser(result.user)
             onClose();
             router.push('/for-you');
         })
@@ -47,8 +47,8 @@ export default function LoginModal({ onClose, onRegister }) {
     function googleLogin() {
         setLoadingGoogle(true)
         signInWithPopup(auth, provider)
-        .then((user) => {
-            setUser(user)
+        .then((result) => {
+            setUser(result.user)
             onClose();
             router.push('/for-you');
         })
