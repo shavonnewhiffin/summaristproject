@@ -5,7 +5,7 @@ import { auth, provider } from '../src/firebase';
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { IoMdClose } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
-import { FaSpinner } from "react-icons/fa";
+import { ImSpinner8 } from "react-icons/im";
 import styles from '../styles/home/Modals.module.css'
 import Image from 'next/image'
 import google from '../.././public/images/google.png'
@@ -18,6 +18,7 @@ export default function LoginModal({ onClose, onRegister }) {
     const [password, setPassword] = useState(null);
     const [loading, setLoading] = useState(false);
     const [loadingGoogle, setLoadingGoogle] = useState(false)
+    const [loadingGuest, setLoadingGuest] = useState(false)
     const [authError, setAuthError] = useState(null);
 
     const router = useRouter();
@@ -54,8 +55,24 @@ export default function LoginModal({ onClose, onRegister }) {
         })
         .catch((error) => {
             console.log(error);
-            setLoadingGoogle(false);
+            setLoadingGuest(false);
             setAuthError(error.message);
+        })
+    }
+
+    function loginAsGuest(){
+          setLoadingGuest(true)  
+          signInWithEmailAndPassword(auth, 'guest@gmail.com', 'guest123')
+                .then((result) => {
+            console.log(result.user)
+            setUser(result.user)
+            onClose();
+            router.push('/for-you');
+        })
+        .catch((error) => {
+            console.log(error);
+            setAuthError(error.message);
+            setLoading(false);
         })
     }
 
@@ -65,11 +82,11 @@ export default function LoginModal({ onClose, onRegister }) {
         <div className={styles['modal__content']}>
           <div className={styles['modal__title']}>Login to Summarist</div>
           {authError && <div className={styles['auth__error']}>{authError}</div>}
-          <button className={`btn ${styles.btn} ${styles['guest__btn--wrapper']}`}>
+          <button className={`btn ${styles.btn} ${styles['guest__btn--wrapper']}`} onClick={(() => {loginAsGuest()})}>
             <figure className={`${styles['google__icon--mask']} ${styles['guest__icon--mask']}`}>
               <FaUser />
             </figure>
-            <div className="">Login as a Guest</div>
+            <div className="">{loadingGuest ? (<ImSpinner8 className="spinner" />) : ('Login as a Guest')}</div>
           </button>
           <div className={styles['modal__seperator']}>
             <span className={styles['modal__seperator--text']}>or</span>
@@ -78,7 +95,7 @@ export default function LoginModal({ onClose, onRegister }) {
             <figure className={styles['google__icon--mask']}>
               <Image src={google} alt="" />
             </figure>
-            <div className="" >{loadingGoogle ? (<FaSpinner />) : ('Login with Google')}</div>
+            <div className="" >{loadingGoogle ? (<ImSpinner8 className="spinner" />) : ('Login with Google')}</div>
           </button>
           <div className={styles['modal__seperator']}>
             <span className={styles['modal__seperator--text']}>or</span>
@@ -97,7 +114,7 @@ export default function LoginModal({ onClose, onRegister }) {
               onChange = {(e) => setPassword(e.target.value) }
             />
             <button className="btn">
-              {loading ? (<FaSpinner className="spinner" />) : (<span>Login</span>)}
+              {loading ? (<ImSpinner8 className="spinner" />) : (<span>Login</span>)}
             </button>
           </form>
           <div className={styles['modal__forgot--password']}>Forgot your password?</div>

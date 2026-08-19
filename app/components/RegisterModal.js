@@ -5,7 +5,7 @@ import { auth, provider } from '../src/firebase';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import React from 'react'
 import { IoMdClose } from "react-icons/io";
-import { FaSpinner } from "react-icons/fa";
+import { ImSpinner8 } from "react-icons/im";
 import styles from '../styles/home/Modals.module.css'
 import Image from 'next/image'
 import google from '../.././public/images/google.png'
@@ -68,7 +68,7 @@ const RegisterModal = ({ onClose, onLogin }) => {
             <figure className={styles['google__icon--mask']}>
               <Image src={google} alt="" />
             </figure>
-            <div className="">{googleLoading ? (<FaSpinner />):('Register with Google')}</div>
+            <div className="">{googleLoading ? (<ImSpinner8 className="spinner" />):('Register with Google')}</div>
           </button>
           <div className={styles['modal__seperator']}>
             <span className={styles['modal__seperator--text']}>or</span>
@@ -87,7 +87,7 @@ const RegisterModal = ({ onClose, onLogin }) => {
               onChange = {(e) => setPassword(e.target.value) }
             />
             <button className="btn">
-              {loading ? (<FaSpinner  className="spinner"/>) : (<span>Register</span>)}
+              {loading ? (<ImSpinner8  className="spinner"/>) : (<span>Register</span>)}
             </button>
           </form>
         </div>

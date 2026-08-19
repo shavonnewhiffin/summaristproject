@@ -45,6 +45,10 @@
     justify-content: center;
 }
 
+.btn.guest__btn--wrapper:hover {
+    background-color: #25396b;
+}
+
 .modal__seperator {
     display: flex;
     align-items: center;
@@ -72,6 +76,10 @@
     background-color: #4285f4;
     color: #fff;
     justify-content: center;
+}
+
+.btn.google__btn--wrapper:hover {
+    background-color: #3367D6;
 }
 
 .google__icon--mask {
