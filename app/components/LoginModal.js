@@ -17,6 +17,7 @@ export default function LoginModal({ onClose, onRegister }) {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [loadingGoogle, setLoadingGoogle] = useState(false)
     const [authError, setAuthError] = useState(null);
 
     const router = useRouter();
@@ -44,16 +45,17 @@ export default function LoginModal({ onClose, onRegister }) {
     }
 
     function googleLogin() {
+        setLoadingGoogle(true)
         signInWithPopup(auth, provider)
         .then((user) => {
-             setUser(user)
+            setUser(user)
             onClose();
             router.push('/for-you');
         })
         .catch((error) => {
             console.log(error);
+            setLoadingGoogle(false);
             setAuthError(error.message);
-            setLoading(false);
         })
     }
 
@@ -72,11 +74,11 @@ export default function LoginModal({ onClose, onRegister }) {
           <div className={styles['modal__seperator']}>
             <span className={styles['modal__seperator--text']}>or</span>
           </div>
-          <button className={`btn ${styles.btn} ${styles['google__btn--wrapper']}`} onClick ={() => login()}>
+          <button className={`btn ${styles.btn} ${styles['google__btn--wrapper']}`} onClick={() => {googleLogin()}}>
             <figure className={styles['google__icon--mask']}>
               <Image src={google} alt="" />
             </figure>
-            <div className="" onClick={() => {googleLogin}}>Login with Google</div>
+            <div className="" >{loadingGoogle ? (<FaSpinner />) : ('Login with Google')}</div>
           </button>
           <div className={styles['modal__seperator']}>
             <span className={styles['modal__seperator--text']}>or</span>
