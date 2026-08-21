@@ -1,7 +1,8 @@
 "use client";
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useRouter } from 'next/navigation'
 import { auth, provider } from '../src/firebase';
+import { AuthContext } from '../src/context/auth-context'
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { IoMdClose } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
@@ -13,7 +14,6 @@ import google from '../.././public/images/google.png'
 
 export default function LoginModal({ onClose, onRegister }) {
 
-    const [user, setUser] = useState(null);
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -22,6 +22,7 @@ export default function LoginModal({ onClose, onRegister }) {
     const [authError, setAuthError] = useState(null);
 
     const router = useRouter();
+    const user = useContext(AuthContext);
 
     function login() {
         setLoading(true);
