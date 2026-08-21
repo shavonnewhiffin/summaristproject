@@ -54,7 +54,7 @@ export default function LoginModal({ onClose, onRegister }) {
         })
         .catch((error) => {
             console.log(error);
-            setLoadingGuest(false);
+            setLoadingGoogle(false);
             setAuthError(error.message);
         })
     }
@@ -70,7 +70,7 @@ export default function LoginModal({ onClose, onRegister }) {
         .catch((error) => {
             console.log(error);
             setAuthError(error.message);
-            setLoading(false);
+            setLoadingGuest(false);
         })
     }
 
