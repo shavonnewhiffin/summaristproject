@@ -22,7 +22,7 @@ export default function LoginModal({ onClose, onRegister }) {
     const [authError, setAuthError] = useState(null);
 
     const router = useRouter();
-    const user = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     function login() {
         setLoading(true);
@@ -30,7 +30,6 @@ export default function LoginModal({ onClose, onRegister }) {
         signInWithEmailAndPassword(auth, email, password)
         .then((result) => {
             console.log(result.user)
-            setUser(result.user)
             onClose();
             router.push('/for-you');
         })
@@ -50,7 +49,6 @@ export default function LoginModal({ onClose, onRegister }) {
         setLoadingGoogle(true)
         signInWithPopup(auth, provider)
         .then((result) => {
-            setUser(result.user)
             onClose();
             router.push('/for-you');
         })
@@ -66,7 +64,6 @@ export default function LoginModal({ onClose, onRegister }) {
           signInWithEmailAndPassword(auth, 'guest@gmail.com', 'guest123')
                 .then((result) => {
             console.log(result.user)
-            setUser(result.user)
             onClose();
             router.push('/for-you');
         })
