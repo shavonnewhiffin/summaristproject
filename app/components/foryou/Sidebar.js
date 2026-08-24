@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 import styles from "../../styles/for-you/Sidebar.module.css";
+import Link from "next/link";
 import Image from "next/image";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoBookmarkOutline } from "react-icons/io5";
@@ -26,11 +27,11 @@ const Sidebar = () => {
   }
 
   function handleLogout() {
-    console.log('sign out')
+    console.log("sign out");
     signOut(auth)
       .then(() => {
         setUser(false);
-        router.push('/');
+        router.push("/");
         // Sign-out successful.
       })
       .catch((error) => {
@@ -48,6 +49,7 @@ const Sidebar = () => {
       </div>
       <div className={styles.sidebar__wrapper}>
         <div className={styles.sidebar__top}>
+          <Link href="/for-you">
           <div
             className={styles["sidebar__link--wrapper"]}
             onClick={() => handleTabClick("For you")}
@@ -60,7 +62,9 @@ const Sidebar = () => {
             </div>
             <div className={styles["sidebar__link--text"]}>For you</div>
           </div>
+          </Link>
 
+          <Link href="/my-library">
           <div
             className={styles["sidebar__link--wrapper"]}
             onClick={() => handleTabClick("My Library")}
@@ -73,6 +77,7 @@ const Sidebar = () => {
             </div>
             <div className={styles["sidebar__link--text"]}>My Library</div>
           </div>
+          </Link>
 
           <div
             className={`${styles["sidebar__link--wrapper"]} ${styles["sidebar__link--not-allowed"]}`}
@@ -95,12 +100,14 @@ const Sidebar = () => {
           </div>
         </div>
         <div className={styles.sidebar__bottom}>
+          <Link href="/settings">
           <div
             className={styles["sidebar__link--wrapper"]}
             onClick={() => {
               handleTabClick("Settings");
             }}
           >
+            -
             <div
               className={`${styles["sidebar__link--line"]} ${activeTab === "Settings" ? styles["active--tab"] : ""}`}
             ></div>
@@ -109,6 +116,7 @@ const Sidebar = () => {
             </div>
             <div className={styles["sidebar__link--text"]}>Settings</div>
           </div>
+          </Link>
           <div
             className={`${styles["sidebar__link--wrapper"]} ${styles["sidebar__link--not-allowed"]}`}
           >
@@ -118,14 +126,17 @@ const Sidebar = () => {
             </div>
             <div className={styles["sidebar__link--text"]}>Help & Support</div>
           </div>
-          <div
-            className={`${styles["sidebar__link--wrapper"]}`}
-          >
+          <div className={`${styles["sidebar__link--wrapper"]}`}>
             <div className={styles["sidebar__link--line"]}></div>
             <div className={styles["sidebar__icon--wrapper"]}>
               <MdLogout className="icons" />
             </div>
-            <div className={styles["sidebar__link--text"]} onClick={() => handleLogout()}>{!user ? ('Login') : ('Logout')}</div>
+            <div
+              className={styles["sidebar__link--text"]}
+              onClick={() => handleLogout()}
+            >
+              {!user ? "Login" : "Logout"}
+            </div>
           </div>
         </div>
       </div>
