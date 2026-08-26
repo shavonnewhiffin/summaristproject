@@ -9,6 +9,10 @@
     transition: all .3s;
 }
 
+.foryou__sub-title {
+    color: #032b41;
+    width: 40%;
+}
 
 /* RECOMMENDED & SUGGESTED BOOKS WRAPPER */
 
