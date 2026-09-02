@@ -2,13 +2,15 @@
 
 import { useContext } from "react";
 import { AuthContext } from "../../src/context/auth-context";
-import Image from "next/image";
 import styles from "../../styles/dashboard/Settings.module.css";
-import Laptop from "../../assets/login.png";
+import LoginPrompt from '../../components/dashboard/LoginPrompt';
 
 const page = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   console.log(user);
+
+  if (loading) return null;
+
   return user ? (
     <div className="container">
       <div className="row">
@@ -28,17 +30,7 @@ const page = () => {
       </div>
     </div>
   ) : (
-    <div className="container">
-      <div className="row">
-        <div className={styles['login__prompt']}>
-          <figure className={styles['login__img--wrapper']}>
-            <Image src={Laptop} />
-          </figure>
-          <div className={styles['login__text']}>Login to your account to see your  details.</div>
-          <button className={`btn ${styles['login__btn']}`}>Login</button>
-        </div>
-      </div>
-    </div>
+<LoginPrompt />
   );
 };
 
