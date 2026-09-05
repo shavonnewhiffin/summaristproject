@@ -6,7 +6,7 @@ import { GoClock } from "react-icons/go";
 import { IoMicOutline } from "react-icons/io5";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { IoBookOutline } from "react-icons/io5";
-import { FaRegBookmark } from "react-icons/fa";
+import AddToLibraryButton from "../../../components/dashboard/AddToLibraryButton"
 import styles from "../../../styles/dashboard/Book.module.css"
 
 export default async function page({ params }) {
@@ -80,14 +80,7 @@ export default async function page({ params }) {
               <div className={styles.readbtn__text}>Listen</div>
             </Link>
           </div>
-          <div className={styles['inner__book--bookmark']}>
-            <div className={styles['inner__book--bookmark-icon']}>
-              <FaRegBookmark />
-            </div>
-            <div className={styles['inner__book--bookmark-text']}>
-              Add Title to My Library
-            </div>
-          </div>
+          <AddToLibraryButton book={book} />
           <div className={styles['inner__book--secondary-title']}> What's it about? </div>
           <div className={styles['inner__book--tags-wrapper']}>
             <div className={styles['inner__book--tag']}>{book.tags?.[0]}</div>
