@@ -19,6 +19,16 @@ service cloud.firestore {
       match /subscriptions/{subscriptionId} {
         allow read: if request.auth != null && request.auth.uid == userId;
       }
+
+      // The client writes directly to this one (Add to Library button).
+      match /library/{bookId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // The client writes directly to this one when a book finishes playing.
+      match /finished/{bookId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
     }
 
     // Keep everything else locked down for now.
