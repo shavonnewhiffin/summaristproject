@@ -15,7 +15,7 @@ export default function Search() {
   const [results, setResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [debouncedSearch] = useDebounce(search, 500)
+  const [debouncedSearch] = useDebounce(search, 300)
 
   useEffect(() => {
     setSearch("");
