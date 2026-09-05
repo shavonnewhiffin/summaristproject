@@ -4,11 +4,27 @@ import Image from 'next/image'
 import styles from '../../styles/for-you/BookCard.module.css'
 import { CiClock2 } from "react-icons/ci";
 import { IoMdStarOutline } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 
- export default function BookCard({ book }){
-  console.log(book)
+ export default function BookCard({ book, onRemove }){
+  function handleRemoveClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    onRemove(book);
+  }
+
   return (
     <Link href={`/book/${book.id}`} className={styles.book}>
+      {onRemove ? (
+        <button
+          type="button"
+          className={styles['book__remove-btn']}
+          onClick={handleRemoveClick}
+          aria-label="Remove from library"
+        >
+          <IoClose />
+        </button>
+      ) : null}
       <div className={styles['book__pill']} style={{ display: book.subscriptionRequired ? 'block' : 'none' }}>Premium</div>
       <figure className={styles['book__image--wrapper']}>
         <Image className={styles['book__image']} src={`${book.imageLink}`} fill loading="lazy" alt="Book Cover" />
