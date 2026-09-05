@@ -1,5 +1,6 @@
 import React from "react";
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { IoIosStarOutline } from "react-icons/io";
 import { GoClock } from "react-icons/go";
 import { IoMicOutline } from "react-icons/io5";
@@ -13,7 +14,18 @@ export default async function page({ params }) {
   const response = await fetch(
     `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${id}`,
   );
-  const book = await response.json();
+
+  if (!response.ok) {
+    notFound();
+  }
+
+  const text = await response.text();
+
+  if (!text) {
+    notFound();
+  }
+
+  const book = JSON.parse(text);
   console.log(book);
 
   return (
