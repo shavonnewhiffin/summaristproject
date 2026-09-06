@@ -133,3 +133,27 @@
     height: 300px;
     margin: 40px 0px;
  }
+
+ /* AUDIO LOADING */
+
+.spinner__blue--wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 300px;
+}
+
+ .spinner__blue {
+  color: #032b41;
+  font-size: 80px;
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
