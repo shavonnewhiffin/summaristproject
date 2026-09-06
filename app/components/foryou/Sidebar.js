@@ -22,6 +22,10 @@ const Sidebar = () => {
 
   const router = useRouter();
 
+  function homeClick(){
+    router.push("/for-you")
+  }
+
   function handleTabClick(tabName) {
     setActiveTab(tabName);
   }
@@ -44,7 +48,7 @@ const Sidebar = () => {
     <div className={styles.sidebar}>
       <div className={styles.sidebar__logo}>
         <figure>
-          <Image src="/images/logo.png" alt="Logo" width={160} height={44} />
+          <Image src="/images/logo.png" alt="Logo" width={160} height={44} onClick={homeClick}/>
         </figure>
       </div>
       <div className={styles.sidebar__wrapper}>
