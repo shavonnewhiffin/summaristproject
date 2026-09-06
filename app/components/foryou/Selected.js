@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from '../../styles/for-you/Selected.module.css'
 import Image from 'next/image'
 import { IoIosPlay } from "react-icons/io";
@@ -7,7 +6,6 @@ async function Selected(){
 
 const res = await fetch("https://us-central1-summaristt.cloudfunctions.net/getBooks?status=selected")
 const selected = await res.json();
-console.log(selected)
 
   return (
         <div className="for-you__wrapper">

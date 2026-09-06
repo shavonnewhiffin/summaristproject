@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { FaRegBookmark } from "react-icons/fa";
 import styles from "../../styles/dashboard/Book.module.css";
 import { db } from "../../src/firebase";
@@ -18,7 +18,6 @@ export default function AddToLibraryButton({ book }) {
 
     try {
       await setDoc(doc(db, "customers", user.uid, "library", book.id), book);
-      console.log("saved to library:", book.id);
     } catch (error) {
       console.error("Error saving to library:", error);
     }

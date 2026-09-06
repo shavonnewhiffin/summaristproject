@@ -21,7 +21,6 @@ export const getPremiumStatus = async () => {
     const unsubscribe = onSnapshot(
       q,
       (snapshot) => {
-        console.log("Subscription snapshot", snapshot.docs.length);
         if (snapshot.docs.length === 0) {
           resolve(false);
         } else {

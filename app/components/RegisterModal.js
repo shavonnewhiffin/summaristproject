@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { auth, provider } from '../src/firebase';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import React from 'react'
 import { IoMdClose } from "react-icons/io";
 import { ImSpinner8 } from "react-icons/im";
 import styles from '../styles/home/Modals.module.css'
@@ -24,14 +23,13 @@ const RegisterModal = ({ onClose, onLogin }) => {
         setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
         .then((result) => {
-            console.log(result.user);
             setUser(result.user)
             onClose();
             router.push('/for-you');
-         
+
         })
         .catch((error) => {
-            console.log(error);
+            console.error(error);
             setLoading(false);
             setAuthError(error.message);
         })
@@ -45,14 +43,13 @@ const RegisterModal = ({ onClose, onLogin }) => {
     function googleRegister(){
         setGoogleLoading(true);
         signInWithPopup(auth, provider)
-        .then((user) => {
-            console.log(result.user);
+        .then((result) => {
             setUser(result.user);
             setGoogleLoading(false);
             router.push('/for-you');
         })
         .catch((error) => {
-            console.log(error);
+            console.error(error);
             setGoogleLoading(false);
             setAuthError(error.message)
         })

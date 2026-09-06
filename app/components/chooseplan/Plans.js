@@ -20,8 +20,6 @@ const Plans = () => {
   const [loading, setLoading] = useState(false);
 
   const handleCheckout = async () => {
-    console.log("user at checkout:", user);
-
     if (!user) {
       alert("Please sign in before starting your subscription.");
       return;

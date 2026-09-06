@@ -1,4 +1,3 @@
-import React from "react";
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { IoIosStarOutline } from "react-icons/io";
@@ -26,7 +25,6 @@ export default async function page({ params }) {
   }
 
   const book = JSON.parse(text);
-  console.log(book);
 
   return (
     <div className="row">

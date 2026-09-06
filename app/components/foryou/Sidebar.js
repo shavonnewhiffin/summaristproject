@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../../styles/for-you/Sidebar.module.css";
 import Link from "next/link";
@@ -31,15 +31,13 @@ const Sidebar = () => {
   }
 
   function handleLogout() {
-    console.log("sign out");
     signOut(auth)
       .then(() => {
         setUser(false);
         router.push("/");
-        // Sign-out successful.
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
         setAuthError(error.message);
       });
   }

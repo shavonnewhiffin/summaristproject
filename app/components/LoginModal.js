@@ -29,12 +29,11 @@ export default function LoginModal({ onClose, onRegister }) {
         setAuthError(null);
         signInWithEmailAndPassword(auth, email, password)
         .then((result) => {
-            console.log(result.user)
             onClose();
             router.push('/for-you');
         })
         .catch((error) => {
-            console.log(error);
+            console.error(error);
             setAuthError(error.message);
             setLoading(false);
         })
@@ -53,7 +52,7 @@ export default function LoginModal({ onClose, onRegister }) {
             router.push('/for-you');
         })
         .catch((error) => {
-            console.log(error);
+            console.error(error);
             setLoadingGoogle(false);
             setAuthError(error.message);
         })
@@ -63,12 +62,11 @@ export default function LoginModal({ onClose, onRegister }) {
           setLoadingGuest(true)  
           signInWithEmailAndPassword(auth, 'guest@gmail.com', 'guest123')
                 .then((result) => {
-            console.log(result.user)
             onClose();
             router.push('/for-you');
         })
         .catch((error) => {
-            console.log(error);
+            console.error(error);
             setAuthError(error.message);
             setLoadingGuest(false);
         })

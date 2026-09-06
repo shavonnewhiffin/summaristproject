@@ -22,8 +22,6 @@ useEffect(() => {
   checkPremium();
 },[user])
 
-  console.log(user);
-
   if (loading) return null;
 
   return user ? (
