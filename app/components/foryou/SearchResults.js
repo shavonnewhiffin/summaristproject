@@ -2,12 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import { GoClock } from "react-icons/go";
 import styles from '../../styles/for-you/SearchResults.module.css'
+import { SearchResultsSkeleton } from '../skeletons/SearchResultsSkeleton';
 
 export const SearchResults = ({ results, isSearching }) => {
   if (isSearching) {
     return (
       <div className={styles['search__books--wrapper']}>
-        <div className={styles['search__book--details']}>Searching...</div>
+        <SearchResultsSkeleton />
       </div>
     )
   }
