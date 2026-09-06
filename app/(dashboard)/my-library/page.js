@@ -7,11 +7,13 @@ import { AuthContext } from '../../src/context/auth-context'
 import BookCard from '../../components/foryou/BookCard'
 import LoginPrompt from '../../components/dashboard/LoginPrompt'
 import styles from '../../styles/for-you/ForYou.module.css'
+import { BookCardSkeleton } from '../../components/skeletons/BookCardSkeleton';
 
 const page = () => {
   const { user, loading } = useContext(AuthContext)
   const [books, setBooks] = useState([])
   const [finishedBooks, setFinishedBooks] = useState([])
+  const [booksLoading, setBooksLoading] = useState(true)
 
   useEffect(() => {
     if (!user) return
@@ -20,6 +22,7 @@ const page = () => {
 
     const unsubscribe = onSnapshot(libraryRef, (snapshot) => {
       setBooks(snapshot.docs.map((doc) => doc.data()))
+      setBooksLoading(false)
     })
 
     return () => unsubscribe()
@@ -58,7 +61,13 @@ const page = () => {
                 {books.length} items
             </div>
             <div className={styles['foryou__books--wrapper']}>
-                {books.map((book) => (<BookCard key={book.id} book={book} onRemove={handleRemove} />))}
+                {booksLoading
+                  ? Array.from({ length: 5 }).map((_, index) => (
+                      <BookCardSkeleton key={index} />
+                    ))
+                  : books.map((book) => (
+                      <BookCard key={book.id} book={book} onRemove={handleRemove} />
+                    ))}
             </div>
             <div
               className={styles['prompt__books--block-wrapper']}
@@ -74,7 +83,10 @@ const page = () => {
                 {finishedBooks.length} items
             </div>
             <div className={styles['foryou__books--wrapper']}>
-                {finishedBooks.map((book) => (<BookCard key={book.id} book={book} />))}
+                {booksLoading
+                  ? Array.from({ length: 5 }).map((_, index) => (
+                      <BookCardSkeleton key={index} />
+                    )) :finishedBooks.map((book) => (<BookCard key={book.id} book={book} />))}
             </div>
               <div
                 className={styles['prompt__books--block-wrapper']}
