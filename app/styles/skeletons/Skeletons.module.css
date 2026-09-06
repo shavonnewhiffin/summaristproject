@@ -1,0 +1,135 @@
+/* SKELETONS */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #eee 25%,
+    #f7f7f7 50%,
+    #eee 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+
+  to {
+    background-position: 200% 0;
+  }
+}
+
+/* FOR YOU */
+
+/* SELECTED SKELETON */
+    .selected--skeleton{
+    width: calc((100% / 3) * 2);
+    height: 200px;
+    background-color: #515151;
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 24px;
+    gap: 24px;
+}
+
+/* BOOKS SKELETON */
+ .bookcard__skeleton {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    width: 100%;
+ }
+
+ .bookcard__skeleton--image{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 8px;
+ }
+
+ .bookcard__skeleton--title {
+    width: 172px;
+    height: 12px;
+    margin-bottom: 8px;
+ }
+
+ .bookcard__skeleton--author{
+    width: 172px;
+    height: 12px;
+    margin-bottom: 8px;
+ }
+
+ .bookcard__skeleton--subtitle{
+    width: 100%;
+    max-width: 172px;
+    height: 12px;
+    margin-bottom: 8px;
+ }
+
+ .bookcard__skeleton--details {
+    width: 172px;
+    height: 8px;
+ }
+
+ /* BOOK PAGE SKELETON */
+
+ .innerbook__skeleton--wrapper {
+    display: flex;
+    margin: 0 auto;
+    gap: 16px;
+ }
+
+ .innerbook__skeleton--title {
+    width: 400px;
+    height: 40px;
+    margin: 30px 0px;
+ }
+
+ .innerbook__skeleton--author{
+        margin-bottom: 16px;
+        width: 250px;
+        height: 20px;
+        margin: 20px 0px;
+ }
+
+ .innerbook__skeleton--sub-title {
+    width: 450px;
+    height: 35px;
+    margin: 20px 0px;
+ }
+
+ .innerbook__skeleton--details {
+    width: 350px;
+    height: 60px;
+    margin: 20px 0px;
+ }
+
+ .innerbook__skeleton--actions{
+    width: 350px;
+    height: 60px;
+    margin: 20px 0px;
+ }
+
+ .innerbook__skeleton--header{
+    width: 300px;
+    height: 30px;
+     margin: 40px 0px;
+ }
+
+ .innerbook__skeleton--text-block {
+    width: 800px;
+    height: 400px;
+     margin: 20px 0px;
+ }
+
+ .innerbook__skeleton--second-textblock {
+    width: 800px;
+    height: 600px;
+ }
+
+ .innerbook__skeleton--img-wrapper {
+    width: 300px;
+    height: 300px;
+    margin: 40px 0px;
+ }
