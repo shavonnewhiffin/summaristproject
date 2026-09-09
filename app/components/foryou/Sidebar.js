@@ -15,7 +15,7 @@ import { MdLogout } from "react-icons/md";
 import { signOut } from "firebase/auth";
 import { auth } from "../../src/firebase";
 
-const Sidebar = () => {
+const Sidebar = ({ mobileOpen = false, mobileVisible = false }) => {
   const [activeTab, setActiveTab] = useState("For you");
   const [user, setUser] = useState(true);
   const [authError, setAuthError] = useState(null);
@@ -43,7 +43,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className={styles.sidebar}>
+    <div className={`${styles.sidebar} ${mobileOpen ? styles["sidebar--mobile-open"] : ""} ${mobileVisible ? styles["sidebar--mobile-visible"] : ""}`}>
       <div className={styles.sidebar__logo}>
         <figure>
           <Image src="/images/logo.png" alt="Logo" width={160} height={44} onClick={homeClick}/>
