@@ -79,7 +79,16 @@
       display: none;
     }
 
-    .sidebar__link--text {
-        display: none;
+    .sidebar.sidebar--mobile-open {
+      display: block;
+      width: 80%;
+      min-width: 0;
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    .sidebar.sidebar--mobile-open.sidebar--mobile-visible {
+      transform: translateX(0);
+      opacity: 1;
     }
 }
