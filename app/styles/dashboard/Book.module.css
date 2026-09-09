@@ -160,3 +160,42 @@
     border-radius: 4px;
     transition: background-color .2s;
 }
+
+.book__img--wrapper {
+    height: 300px;
+    width: 300px;
+    min-width: 300px;
+}
+
+@media (max-width: 992px){
+    .inner__wrapper {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 768px){
+
+    .inner__book--img-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    .inner__book--title{
+        font-size: 24px;
+    }
+    .inner__book--author{
+        font-size: 14px;
+    }
+    .inner__book--sub-title{
+        font-size: 18px;
+    }
+    .inner__book--key-ideas{
+        font-size: 14px;
+    }
+    .inner__book--book--description, 
+    .inner__book--author--description {
+        font-size: 14px;
+    }
+
+}
