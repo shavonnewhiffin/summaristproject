@@ -144,3 +144,21 @@
     appearance: none;
     background: linear-gradient(to right, rgb(43, 217, 124) 0%, rgb(109, 120, 125) 0%)
 }
+
+@media(max-width: 768px){
+    .audiobook__summary--text {
+        font-size: 14px;
+    }
+    .audio__wrapper{
+        flex-direction: column;
+        height: 180px;
+        padding: 16px 24px;
+    }
+      .audio__track--wrapper,
+      .audio__controls--wrapper,
+      .audio__progress--wrapper {
+        width: 100%;
+        justify-content: center;
+    }
+
+}

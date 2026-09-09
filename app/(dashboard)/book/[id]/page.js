@@ -86,7 +86,7 @@ export default async function page({ params }) {
           </div>
           <div className={styles['inner__book--book--description']}>{book.bookDescription}</div>
           <div className={styles['inner__book--secondary-title']}>About the Author</div>
-          <div className={styles['inner__book__author--description']}>{book.authorDescription}</div>
+          <div className={styles['inner__book--author--description']}>{book.authorDescription}</div>
       </div>
       <div className={styles['inner__book--img-wrapper']}>
         <figure className={styles['book__img--wrapper']}>

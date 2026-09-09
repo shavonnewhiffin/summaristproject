@@ -6,7 +6,7 @@ const Track = ({ book }) => {
     <div className={styles['audio__track--wrapper']}>
       <figure className={styles['audio__track--image-mask']}>
         <figure className={styles['book__image--wrapper']}>
-          <img className={styles.book__image}></img>
+          <img className={styles.book__image} src={book.imageLink} alt={book.title} />
         </figure>
       </figure>
       <div className={styles['audio__details--wrapper']}>
