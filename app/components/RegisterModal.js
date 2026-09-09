@@ -24,9 +24,8 @@ const RegisterModal = ({ onClose, onLogin }) => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((result) => {
             setUser(result.user)
-            onClose();
             router.push('/for-you');
-
+            onClose();
         })
         .catch((error) => {
             console.error(error);
