@@ -58,7 +58,7 @@ export default function Landing() {
                 alt="landing"
                 width="779"
                 height="740"
-                loading="lazy"
+                loading="eager"
               />
             </figure>
           </div>
