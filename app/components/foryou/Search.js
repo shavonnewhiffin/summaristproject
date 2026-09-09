@@ -6,6 +6,7 @@ import { useDebounce } from 'use-debounce'
 import { FaBars } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
 import { SearchResults } from "./SearchResults";
+import Sidebar from "./Sidebar";
 import styles from "../../styles/for-you/Search.module.css";
 
 export default function Search() {
@@ -16,9 +17,13 @@ export default function Search() {
   const [isSearching, setIsSearching] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [debouncedSearch] = useDebounce(search, 300)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const closeTimeoutRef = useRef(null);
 
   useEffect(() => {
     setSearch("");
+    closeMenu();
   }, [pathname])
 
   useEffect(() => {
@@ -56,6 +61,20 @@ export default function Search() {
     fetchSearch();
   }, [debouncedSearch])
 
+  function openMenu(){
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setIsMenuOpen(true);
+    setTimeout(() => setIsMenuVisible(true), 10);
+  }
+
+  function closeMenu(){
+    setIsMenuVisible(false);
+    closeTimeoutRef.current = setTimeout(() => setIsMenuOpen(false), 300);
+  }
+
   return (
     <div className={styles.search__background}>
       <div className={styles.search__wrapper}>
@@ -76,7 +95,13 @@ export default function Search() {
             </div>
           </div>
           <div className={styles['sidebar__toggle--btn']}>
-            <FaBars className="icons" />
+            <FaBars className="icons" onClick={openMenu}/>
+            {isMenuOpen && (
+              <>
+                <div className={`${styles.overlay} ${isMenuVisible ? styles["overlay--visible"] : ""}`} onClick={closeMenu} />
+                <Sidebar mobileOpen mobileVisible={isMenuVisible} />
+              </>
+            )}
           </div>
         </div>
       </div>
