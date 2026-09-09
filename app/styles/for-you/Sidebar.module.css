@@ -73,3 +73,13 @@
 .active--tab {
     background-color: #2bd97c;
 }
+
+@media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+
+    .sidebar__link--text {
+        display: none;
+    }
+}

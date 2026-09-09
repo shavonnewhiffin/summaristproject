@@ -51,3 +51,12 @@
 .prompt__books--sub-title{
     color: #394547;
 }
+
+@media (max-width: 758px){
+
+    .wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+
+}

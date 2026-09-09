@@ -103,3 +103,8 @@
     height: 16px;
 }
 
+@media(max-width: 768px){
+    .book {
+        flex-shrink: 0;
+    }
+}

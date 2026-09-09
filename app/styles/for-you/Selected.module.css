@@ -85,3 +85,10 @@
     font-weight: 500;
     color: #032b41;
 }
+
+@media (max-width:980px){
+    .selected__book {
+        width: 100%;
+    }
+}
+
