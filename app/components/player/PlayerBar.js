@@ -10,8 +10,21 @@ import { AuthContext } from "../../src/context/auth-context";
 import { db } from "../../src/firebase";
 
 const PlayerBar = ({ book }) => {
-  const { currentTrack, isPlaying, setIsPlaying, audioRef } = useAudioPlayerContext();
+  const { currentTrack, setCurrentTrack, isPlaying, setIsPlaying, audioRef } = useAudioPlayerContext();
   const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    setCurrentTrack({
+      title: book.title,
+      src: book.audioLink,
+      author: book.author,
+    });
+    setIsPlaying(false);
+  }, [book.id, book.audioLink]);
+
+  useEffect(() => {
+    audioRef.current?.load();
+  }, [currentTrack.src]);
 
   useEffect(() => {
     if (isPlaying) {
